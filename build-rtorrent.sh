@@ -1,6 +1,23 @@
 #!/bin/sh
 
+# Exit on error.
 set -e
+
+# Install Dependencies
+apk add --update \
+  -t build-dependencies \
+  build-base \
+  git \
+  libtool \
+  automake \
+  autoconf \
+  cppunit-dev \
+  curl-dev \
+  zlib-dev \
+  ncurses-dev \
+  libressl-dev \
+  binutils \
+  linux-headers
 
 cd /tmp/
 
@@ -23,3 +40,6 @@ cd /tmp/rtorrent
 ./configure
 make
 make install
+
+# Cleanup Build Output
+rm -rf /tmp/
