@@ -17,7 +17,8 @@ apk add --update \
   ncurses-dev \
   libressl-dev \
   binutils \
-  linux-headers
+  linux-headers \
+  xmlrpc-c-dev
 
 cd /tmp/
 
@@ -37,7 +38,7 @@ printf "\n\n-------- Building rTorrent\n\n"
 git clone https://github.com/rakshasa/rtorrent.git
 cd /tmp/rtorrent
 ./autogen.sh
-./configure
+./configure --with-xmlrpc-c
 make
 make install
 
