@@ -25,7 +25,7 @@ RUN cd /tmp/libtorrent && ./autogen.sh && ./configure && make && make install \
   && make install DESTDIR=/tmp/artifacts && cd /tmp/
 
 # Build rTorrent and install into builder stage.
-RUN git clone https://github.com/rakshasa/rtorrent.git
+RUN git clone https://github.com/http403/rtorrent.git
 RUN cd /tmp/rtorrent && ./autogen.sh && ./configure --with-xmlrpc-c && make \
   && make install DESTDIR=/tmp/artifacts && cd /tmp/
 
